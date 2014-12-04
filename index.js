@@ -59,7 +59,7 @@ function select_character(selection) {
 }
 document.addEventListener('keydown', key_pressed_down);
 element.addEventListener('click',select_character(chr_cat_girl));
-chr_boy.addEventListener('click',select_character(chr_boy));
+element.addEventListener('click',select_character(chr_boy));
 chr_horn_girl.addEventListener('click',select_character(chr_horn_girl));
 chr_princess_girl.addEventListener('click',select_character(chr_princess_girl));
 chr_pink_girl.addEventListener('click',select_character(chr_pink_girl));

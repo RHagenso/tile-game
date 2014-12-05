@@ -36,7 +36,7 @@ function key_pressed_down(event) {
         }
     }
     
-    if ([protagonist.x]===[key_place.x]&&[protagonist.y]===[key_place.y]) {
+    if (protagonist.x === key_place.x && protagonist.y === key_place.y ) {
     	key_count = key_count + 1;
     	document.getElementById("keys").innerHTML = key_count+" keys";
     }

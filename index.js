@@ -43,6 +43,7 @@ function key_pressed_down(event) {
     	keys += 1;
     	document.getElementById("keys").innerHTML = keys+" keys";
     	key_count = 1;
+    	door_place.element = open_door;
     }
     if ( protagonist.x === gem_place.x && protagonist.y === gem_place.y && gem_count===0){
     	gems += 1;

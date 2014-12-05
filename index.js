@@ -2,9 +2,13 @@
 /*jslint browser: true*/ // This line tells jsLint that the code will run in a browser.
 
 // Inventory
+var keys = 0;
+var gems = 0;
+var hearts = 0;
 var key_count = 0;
-var gem_count = 0;
 var heart_count = 0;
+var gem_count = 0;
+
 
 // Interaction
 
@@ -35,17 +39,20 @@ function key_pressed_down(event) {
             protagonist.y = protagonist.y + 1;
         }
     }
-    if ( protagonist.x === key_place.x && protagonist.y === key_place.y ) {
-    	key_count += 1;
-    	document.getElementById("keys").innerHTML = key_count+" keys";
+    if ( protagonist.x === key_place.x && protagonist.y === key_place.y && key_count===0) {
+    	keys += 1;
+    	document.getElementById("keys").innerHTML = keys+" keys";
+    	key_count = 1;
     }
-    if ( protagonist.x === gem_place.x && protagonist.y === gem_place.y ){
-    	gem_count += 1;
-    	document.getElementById("gems").innerHTML = gem_count+" hearts";
+    if ( protagonist.x === gem_place.x && protagonist.y === gem_place.y && gem_count===0){
+    	gems += 1;
+    	document.getElementById("gems").innerHTML = gems+" gems";
+    	gem_count = 1;
     }
-    if ( protagonist.x === heart_place.x && protagonist.y === heart_place.y ){
-    	heart_count+=1;
-    	document.getElementById("hearts").innerHTML = heart_count+" hearts";
+    if ( protagonist.x === heart_place.x && protagonist.y === heart_place.y && heart_count===0){
+    	hearts+=1;
+    	document.getElementById("hearts").innerHTML = hearts+" hearts";
+    	heart_count = 1;
     }
     occupants[protagonist.y][protagonist.x] = protagonist.element;
     render();

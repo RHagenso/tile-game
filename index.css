@@ -37,7 +37,10 @@ img.asset {
 	height: auto;
 }
 .GameOver {
-	color: #FF0000;
-	text-align: center;
-	font-size: 300%;
+    color: #FF0000;
+    text-align: center;
+    font-size: 400%;
+    position: absolute;
+    top: 0px;
+    left: 40%;
 }

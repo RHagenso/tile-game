@@ -72,9 +72,9 @@ function select_character(selection) {
 	render();
 }
 document.addEventListener('keydown', key_pressed_down);
-element.addEventListener('click',select_character(chr_cat_girl));
-element.addEventListener('click',select_character(chr_boy));
-chr_horn_girl.addEventListener('click',select_character(chr_horn_girl));
-chr_princess_girl.addEventListener('click',select_character(chr_princess_girl));
-chr_pink_girl.addEventListener('click',select_character(chr_pink_girl));
+chr_cat_girl.addEventListener('click',select_character(cat-girl));
+chr_boy.addEventListener('click',select_character(boy));
+chr_horn_girl.addEventListener('click',select_character(horn-girl));
+chr_princess_girl.addEventListener('click',select_character(princess-girl));
+chr_pink_girl.addEventListener('click',select_character(pink-girl));
 

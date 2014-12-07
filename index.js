@@ -58,9 +58,11 @@ function key_pressed_down(event) {
     }
     if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && gem_count===0){
     	document.getElementById("GameOver").innerHTML = "GAME OVER";
+    	document.removeEventListener('keydown', key_pressed_down);
     }
     if ( protagonist.x === enemy_2_place.x && protagonist.y === enemy_2_place.y && gem_count===0){
     	document.getElementById("GameOver").innerHTML = "GAME OVER";
+    	document.removeEventListener('keydown', key_pressed_down);
     }
     occupants[protagonist.y][protagonist.x] = protagonist.element;
     render();

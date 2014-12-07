@@ -40,22 +40,20 @@ function key_pressed_down(event) {
         }
     }
     if ( protagonist.x === key_place.x && protagonist.y === key_place.y && key_count===0) {
-    	keys += 1;
-    	document.getElementById("keys").innerHTML = keys+" keys";
-    	key_count = 1;
+    	key_count += 1;
+    	document.getElementById("keys").innerHTML = key_count+" keys";
     	occupants[door_place.y][door_place.x] = open_door;
     	render();
     }
-    if ( protagonist.x === gem_place.x && protagonist.y === gem_place.y && gem_count===0){
-    	gems += 1;
-    	document.getElementById("gems").innerHTML = gems+" gems";
-    	gem_count = 1;
+    if ( protagonist.x === gem_place.x && protagonist.y === gem_place.y){
+    	gem_count += 1;
+    	document.getElementById("gems").innerHTML = gem_count+" gems";
     }
-    if ( protagonist.x === heart_place.x && protagonist.y === heart_place.y && heart_count===0){
-    	hearts+=1;
-    	document.getElementById("hearts").innerHTML = hearts+" hearts";
-    	heart_count = 1;
+    if ( protagonist.x === heart_place.x && protagonist.y === heart_place.y){
+    	heart_count += 1;
+    	document.getElementById("hearts").innerHTML = heart_count+" hearts";
     }
+    //Game over conditions
     if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && gem_count===0){
     	document.getElementById("GameOver").innerHTML = "GAME OVER";
     	document.removeEventListener('keydown', key_pressed_down);
@@ -63,6 +61,15 @@ function key_pressed_down(event) {
     if ( protagonist.x === enemy_2_place.x && protagonist.y === enemy_2_place.y && gem_count===0){
     	document.getElementById("GameOver").innerHTML = "GAME OVER";
     	document.removeEventListener('keydown', key_pressed_down);
+    }
+    //Player defeating enemy/enemies
+    if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && gem_count>0){
+    	gem_count -= 1;
+    	document.getElementById("gems").innerHTML = gem_count+" gems";
+    }
+    if ( protagonist.x === enemy_2_place.x && protagonist.y === enemy_2_place.y && gem_count>0){
+    	gem_count -= 1;
+    	document.getElementById("gems").innerHTML = gem_count+" gems";
     }
     occupants[protagonist.y][protagonist.x] = protagonist.element;
     render();

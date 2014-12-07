@@ -66,10 +66,12 @@ function key_pressed_down(event) {
     if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && gem_count>0){
     	gem_count -= 1;
     	document.getElementById("gems").innerHTML = gem_count+" gems";
+    	enemy_1_place.element = undefined;
     }
     if ( protagonist.x === enemy_2_place.x && protagonist.y === enemy_2_place.y && gem_count>0){
     	gem_count -= 1;
     	document.getElementById("gems").innerHTML = gem_count+" gems";
+    	enemy_2_place.element = undefined;
     }
     occupants[protagonist.y][protagonist.x] = protagonist.element;
     render();

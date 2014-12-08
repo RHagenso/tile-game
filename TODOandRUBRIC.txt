@@ -13,9 +13,9 @@ TODO list:
 Rubric:
 Completing 5 of the first 6 items for full points (15 points each):
 1. Allow user to select character (1 of 4)
-2. Winning condition: User must make it to space containing Selector.png after picking up Heart.png
+X2. Winning condition: User must make it to space containing Selector.png after picking up Heart.png
 X3. Picking up Key.png will open either one door (Tall Door.png) or one chest (Chest Closed.png)
-4. Picking up Star.png will multiple all currently held items (i.e. if a key and gem were picked up then the star the user will now hold 2 keys and 2 gems)
+X4. Picking up Star.png will multiple all currently held items (i.e. if a key and gem were picked up then the star the user will now hold 2 keys and 2 gems)
 X5. Holding a gem defeats one enemy and takes away one gem from inventory in doing so
 X6. Display inventory at the top-left of the page
 7. Potentially have levels auto-generate by checking that gems possible = enemies, keys possible = closed doors/chests, and Selector.png is reachable

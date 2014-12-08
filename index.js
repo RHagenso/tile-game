@@ -91,6 +91,7 @@ function key_pressed_down(event) {
     if (protagonist.x === door_place.x && protagonist.y === door_place.y && key_count>0) {
        	key_count -= 1;
        	document.getElementById("keys").innerHTML = key_count+" keys";
+       	door_place.x = undefined;
     }
     occupants[protagonist.y][protagonist.x] = protagonist.element;
     render();

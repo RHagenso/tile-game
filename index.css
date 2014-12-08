@@ -41,6 +41,14 @@ img.asset {
     text-align: center;
     font-size: 400%;
     position: absolute;
-    top: 0px;
+    top: 0;
+    left: 40%;
+}
+.Win {
+	color: #FFFFFF;
+    text-align: center;
+    font-size: 400%;
+    position: absolute;
+    top: 0;
     left: 40%;
 }

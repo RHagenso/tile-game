@@ -73,6 +73,11 @@ function key_pressed_down(event) {
     	document.getElementById("GameOver").innerHTML = "GAME OVER";
     	document.removeEventListener('keydown', key_pressed_down);
     }
+    //Game winning conditions
+    if ( protagonist.x === selector_place.x && protagonist.y === selector_place.y && heart_count===0){
+    	document.getElementById("Win").innerHTML = "YOU WON!";
+    	document.removeEventListener('keydown', key_pressed_down);
+    }
     //Player defeating enemy/enemies
     if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && gem_count>0){
     	gem_count -= 1;

@@ -74,7 +74,7 @@ function key_pressed_down(event) {
     	document.removeEventListener('keydown', key_pressed_down);
     }
     //Game winning conditions
-    if ( protagonist.x === selector_place.x && protagonist.y === selector_place.y && heart_count===0){
+    if ( protagonist.x === selector_place.x && protagonist.y === selector_place.y && heart_count>0){
     	document.getElementById("Win").innerHTML = "YOU WON!";
     	document.removeEventListener('keydown', key_pressed_down);
     }

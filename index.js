@@ -86,15 +86,7 @@ function key_pressed_down(event) {
     if (protagonist.x === door_place.x && protagonist.y === door_place.y && key_count>0) {
        	key_count -= 1;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
     if (protagonist.x === door_place.x && protagonist.y === door_place.y && key_count===0) {
-=======
-    else {
->>>>>>> 8d356dfcb7360656a12ab0d6ed782b136a09ddfc
-=======
-    else {
->>>>>>> 8d356dfcb7360656a12ab0d6ed782b136a09ddfc
     	protagonist.y = 2;
     	protagonist.x = 2;
     	window.alert("Not enough keys, try again.")

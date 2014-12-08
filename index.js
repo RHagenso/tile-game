@@ -83,14 +83,14 @@ function key_pressed_down(event) {
     	enemy_2_place.x = undefined;
     }
     //Opening door(s)
-    if (protagonist.x === door_place.x && protagonist.y === door_place.y && key_count>0) {
-       	key_count -= 1;
-       	document.getElementById("keys").innerHTML = key_count+" keys";
-    }
     if (protagonist.x === door_place.x && protagonist.y === door_place.y && key_count===0) {
     	protagonist.y = 2;
     	protagonist.x = 2;
     	window.alert("Not enough keys, try again.")
+    }
+    if (protagonist.x === door_place.x && protagonist.y === door_place.y && key_count>0) {
+       	key_count -= 1;
+       	document.getElementById("keys").innerHTML = key_count+" keys";
     }
     occupants[protagonist.y][protagonist.x] = protagonist.element;
     render();

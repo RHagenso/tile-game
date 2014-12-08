@@ -2,9 +2,6 @@
 /*jslint browser: true*/ // This line tells jsLint that the code will run in a browser.
 
 // Inventory
-var keys = 0;
-var gems = 0;
-var hearts = 0;
 var key_count = 0;
 var heart_count = 0;
 var gem_count = 0;
@@ -109,10 +106,20 @@ function select_character(selection) {
 	protagonist.element = selection;
 	render();
 }
-document.addEventListener('keydown', key_pressed_down);
-chr_cat_girl.addEventListener('click',select_character(cat-girl));
-chr_boy.addEventListener('click',select_character(boy));
-chr_horn_girl.addEventListener('click',select_character(horn-girl));
-chr_princess_girl.addEventListener('click',select_character(princess-girl));
-chr_pink_girl.addEventListener('click',select_character(pink-girl));
 
+document.addEventListener('keydown', key_pressed_down);
+chr_cat_girl.addEventListener('click',function() {
+	select_character(cat-girl);
+});
+chr_boy.addEventListener('click',function() {
+	select_character(boy);
+});
+chr_horn_girl.addEventListener('click',function(){
+	select_character(horn-girl);
+});
+chr_princess_girl.addEventListener('click',function() {
+	select_character(princess-girl);
+});
+chr_pink_girl.addEventListener('click',function() {
+	select_character(pink-girl);
+});

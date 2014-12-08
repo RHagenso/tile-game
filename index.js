@@ -85,6 +85,7 @@ function key_pressed_down(event) {
     //Opening door(s)
     if (protagonist.x === door_place.x && protagonist.y === door_place.y && key_count>0) {
        	key_count -= 1;
+       	document.getElementById("keys").innerHTML = key_count+" keys";
     }
     if (protagonist.x === door_place.x && protagonist.y === door_place.y && key_count===0) {
     	protagonist.y = 2;

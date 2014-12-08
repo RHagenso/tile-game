@@ -36,6 +36,11 @@ function key_pressed_down(event) {
             protagonist.y = protagonist.y + 1;
         }
     }
+    if ( protagonist.x === wall_place.x && protagonist.y === wall_place.y) {
+    	protagonist.y = 2;
+    	protagonist.x = 2;
+    	window.alert("You can't walk on walls Peter.")
+    }
     //Inventory conditions
     if ( protagonist.x === key_place.x && protagonist.y === key_place.y && key_count===0) {
     	key_count += 1;

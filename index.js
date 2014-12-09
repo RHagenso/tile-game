@@ -101,6 +101,8 @@ function key_pressed_down(event) {
        	key_count -= 1;
        	document.getElementById("keys").innerHTML = key_count+" keys";
        	occupants[door_place.y][door_place.x] = open_door;
+    	door_place.y = -1;
+    	door_place.x = -1;
     }
     occupants[protagonist.y][protagonist.x] = protagonist.element;
     render();

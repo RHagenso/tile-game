@@ -15,8 +15,8 @@ var right_arrow_key = 39;
 var down_arrow_key = 40;
 var letter_R = 82;
 
-function reset(event){
-	if (event.keyCode === letter_R){
+public void keyPressed(KeyEvent r) {
+   	if (event.keyCode === letter_R){
     	protagonist.x = 2;
 		protagonist.y = 2;
 		terrain = [
@@ -149,7 +149,6 @@ function select_character(selection) {
 	render();
 }
 
-document.adEventListener('keydown',reset)
 document.addEventListener('keydown', key_pressed_down);
 chr_cat_girl.addEventListener('click', select_character(cat-girl));
 chr_boy.addEventListener('click', select_character(boy));

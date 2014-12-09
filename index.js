@@ -38,6 +38,9 @@ function key_pressed_down(event) {
 		key_count = 0;
 		gem_count = 0;
 		heart_count = 0;
+		document.getElementById("keys").innerHTML = key_count+" keys";
+		document.getElementById("hearts").innerHTML = heart_count+" hearts";
+		document.getElementById("gems").innerHTML = gem_count+" gems";
     }
     
     if (event.keyCode === left_arrow_key) {

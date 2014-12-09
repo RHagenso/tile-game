@@ -14,9 +14,12 @@ var up_arrow_key = 38;
 var right_arrow_key = 39;
 var down_arrow_key = 40;
 var letter_R = 82;
+   	
 
-public void keyPressed(KeyEvent r) {
-   	if (event.keyCode === letter_R){
+function key_pressed_down(event) {
+    occupants[protagonist.y][protagonist.x] = undefined;
+    
+    if (event.keyCode === letter_R){
     	protagonist.x = 2;
 		protagonist.y = 2;
 		terrain = [
@@ -45,10 +48,6 @@ public void keyPressed(KeyEvent r) {
 		door_place.x = 4;
 		door_place.y = 1;
     }
-}
-
-function key_pressed_down(event) {
-    occupants[protagonist.y][protagonist.x] = undefined;
     
     if (event.keyCode === left_arrow_key) {
         if (is_in_bounds(protagonist.x - 1, protagonist.y)) {

@@ -41,6 +41,9 @@ function key_pressed_down(event) {
 		document.getElementById("keys").innerHTML = key_count+" keys";
 		document.getElementById("hearts").innerHTML = heart_count+" hearts";
 		document.getElementById("gems").innerHTML = gem_count+" gems";
+		key_place.x = 1;
+		heart_place.x = 0;
+		gem_place.x = 4;
     }
     
     if (event.keyCode === left_arrow_key) {
@@ -66,7 +69,7 @@ function key_pressed_down(event) {
     if ( protagonist.x === wall_place.x && protagonist.y === wall_place.y) {
     	protagonist.y = 2;
     	protagonist.x = 2;
-    	window.alert("You can't walk on walls Peter.")
+    	window.alert("You can't walk on walls.")
     }
     //Inventory conditions
     if ( protagonist.x === key_place.x && protagonist.y === key_place.y && key_count===0) {

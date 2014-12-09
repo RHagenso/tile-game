@@ -5,6 +5,7 @@
 var key_count = 0;
 var heart_count = 0;
 var gem_count = 0;
+var star_count = 0;
 
 
 // Interaction
@@ -49,49 +50,49 @@ function key_pressed_down(event) {
     	document.getElementById("keys").innerHTML = key_count+" keys";
     	key_place.x = undefined;
     }
-    if ( protagonist.x === gem_place.x && protagonist.y === gem_place.y){
-    	gem_count += 1;
-    	document.getElementById("gems").innerHTML = gem_count+" gems";
-    	gem_place.x = undefined;
+    if ( protagonist.x === star_place.x && protagonist.y === star_place.y){
+    	star_count += 1;
+    	document.getElementById("stars").innerHTML = star_count+" stars";
+    	star_place.x = undefined;
     }
     if ( protagonist.x === heart_place.x && protagonist.y === heart_place.y){
     	heart_count += 1;
     	document.getElementById("hearts").innerHTML = heart_count+" hearts";
     	heart_place.x = undefined;
     }
-    if ( protagonist.x === star_place.x && protagonist.y === star_place.y){
+    if ( protagonist.x === gem_place.x && protagonist.y === gem_place.y){
     	heart_count = heart_count*2;
     	document.getElementById("hearts").innerHTML = heart_count+" hearts";
-    	gem_count = gem_count*2;
-    	document.getElementById("gems").innerHTML = gem_count+" gems";
+    	star_count = star_count*2;
+    	document.getElementById("stars").innerHTML = star_count+" stars";
     	key_count = key_count*2;
     	document.getElementById("keys").innerHTML = key_count+" keys";
-    	star_place.x = undefined;
+    	gem_place.x = undefined;
     }
     //Game over conditions
-    if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && gem_count===0){
+    if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && star_count===0){
     	document.getElementById("GameOver").innerHTML = "GAME OVER";
     	document.removeEventListener('keydown', key_pressed_down);
     }
-    if ( protagonist.x === enemy_2_place.x && protagonist.y === enemy_2_place.y && gem_count===0){
+    if ( protagonist.x === enemy_2_place.x && protagonist.y === enemy_2_place.y && star_count===0){
     	document.getElementById("GameOver").innerHTML = "GAME OVER";
     	document.removeEventListener('keydown', key_pressed_down);
     }
     //Game winning conditions
-    if ( protagonist.x === selector_place.x && protagonist.y === selector_place.y && heart_count>0){
+    if ( protagonist.x === selector_place.x && protagonist.y === selector_place.y && star_count>0){
     	document.getElementById("Win").innerHTML = "YOU WON!";
     	document.removeEventListener('keydown', key_pressed_down);
     	terrain[protagonist.y][protagonist.x] = [grass, selector]; //Probably useless now
     }
     //Player defeating enemy/enemies
-    if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && gem_count>0){
-    	gem_count -= 1;
-    	document.getElementById("gems").innerHTML = gem_count+" gems";
+    if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && heart_count>0){
+    	heart_count -= 1;
+    	document.getElementById("hearts").innerHTML = heart_count+" hearts";
     	enemy_1_place.x = undefined;
     }
-    if ( protagonist.x === enemy_2_place.x && protagonist.y === enemy_2_place.y && gem_count>0){
-    	gem_count -= 1;
-    	document.getElementById("gems").innerHTML = gem_count+" gems";
+    if ( protagonist.x === enemy_2_place.x && protagonist.y === enemy_2_place.y && heart_count>0){
+    	heart_count -= 1;
+    	document.getElementById("hearts").innerHTML = heart_count+" hearts";
     	enemy_2_place.x = undefined;
     }
     //Opening door(s)
@@ -149,23 +150,25 @@ function reset(){
     		[[grass, selector], [grass], [grass], [grass], [grass]],
 			];
 		occupants = [
-    		[heart, enemy, undefined, wall, gem],
+    		[star, enemy, undefined, wall, heart],
     		[enemy, key, undefined, undefined, undefined],
     		[undefined, undefined, protagonist.element, undefined, undefined],
     		[undefined, undefined, undefined, undefined, undefined],
-    		[undefined, undefined, undefined, undefined, star],
+    		[undefined, undefined, undefined, undefined, gem],
 			];
 		key_count = 0;
 		gem_count = 0;
 		heart_count = 0;
+		star_count = 0;
 		document.getElementById("keys").innerHTML = key_count+" keys";
 		document.getElementById("hearts").innerHTML = heart_count+" hearts";
-		document.getElementById("gems").innerHTML = gem_count+" gems";
+		document.getElementById("stars").innerHTML = star_count+" stars";
 		key_place.x = 1;
-		heart_place.x = 0;
+		heart_place.x = 4;
 		gem_place.x = 4;
 		door_place.x = 4;
 		door_place.y = 1;
+		star_place.x=0;
 }
 
 document.getElementById("reset_button").addEventListener('click',reset);

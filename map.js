@@ -13,11 +13,11 @@ var terrain = [
     [[grass, selector], [grass], [grass], [grass], [grass]],
 ];
 var occupants = [
-    [heart, enemy, undefined, wall, gem],
+    [star, enemy, undefined, wall, heart],
     [enemy, key, undefined, undefined, undefined],
     [undefined, undefined, boy, undefined, undefined],
     [undefined, undefined, undefined, undefined, undefined],
-    [undefined, undefined, undefined, undefined, star],
+    [undefined, undefined, undefined, undefined, gem],
 ];
 var protagonist = {
     element: boy,
@@ -40,7 +40,7 @@ var selector_place = {
 var gem_place = {
 	element: gem,
 	x: 4,
-	y: 0,
+	y: 4,
 };
 
 var enemy_1_place = {
@@ -57,13 +57,13 @@ var enemy_2_place = {
 
 var star_place = {
 	element: star,
-	x: 4,
-	y: 4,
+	x: 0,
+	y: 0,
 };
 
 var heart_place = {
 	element: heart,
-	x: 0,
+	x: 4,
 	y: 0,
 };
 

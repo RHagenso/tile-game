@@ -100,17 +100,11 @@ function key_pressed_down(event) {
     if (protagonist.x === door_place.x && protagonist.y === door_place.y && key_count>0) {
        	key_count -= 1;
        	document.getElementById("keys").innerHTML = key_count+" keys";
-       	door_place.element = open_door;
+       	terrain[door_place.y][door_place.x] = [grass, open_door];
        	door_place.x = -1;
        	door_place.y = -1;
     }
-    if (occupants[protagonist.y][protagonist.x] === open_door){
-    	occupants[protagonist.y][protagonist.x] = [protagonist.element, open_door];
-    } else if(occupants[protagonist.y][protagonist.x] === selector){
-    	terrain[protagonist.y][protagonist.x] = [grass,selector];
-    } else{
-    	occupants[protagonist.y][protagonist.x] = protagonist.element;
-    }
+    occupants[protagonist.y][protagonist.x] = protagonist.element;
     render();
     
 }

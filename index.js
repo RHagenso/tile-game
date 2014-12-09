@@ -79,6 +79,7 @@ function key_pressed_down(event) {
     if ( protagonist.x === selector_place.x && protagonist.y === selector_place.y && heart_count>0){
     	document.getElementById("Win").innerHTML = "YOU WON!";
     	document.removeEventListener('keydown', key_pressed_down);
+    	terrain[protagonist.y][protagonist.x] = [grass, selector];
     }
     //Player defeating enemy/enemies
     if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && gem_count>0){

@@ -13,7 +13,6 @@ var left_arrow_key = 37;
 var up_arrow_key = 38;
 var right_arrow_key = 39;
 var down_arrow_key = 40;
-var letter_R = 82;
    	
 
 function key_pressed_down(event) {
@@ -117,9 +116,8 @@ function select_character(selection) {
 	protagonist.element = selection;
 	render();
 }
-function reset(event){
-	if (event.keyCode === letter_R){
-    	protagonist.x = 2;
+function reset(){
+	   	protagonist.x = 2;
 		protagonist.y = 2;
 		terrain = [
     		[[grass], [grass], [grass], [grass], [grass]],
@@ -127,14 +125,14 @@ function reset(event){
     		[[grass], [grass, plain], [grass], [grass], [grass]],
     		[[grass], [grass], [grass], [grass], [grass]],
     		[[grass, selector], [grass], [grass], [grass], [grass]],
-	];
+			];
 		occupants = [
     		[heart, enemy, undefined, wall, gem],
     		[enemy, key, undefined, undefined, undefined],
     		[undefined, undefined, protagonist.element, undefined, undefined],
     		[undefined, undefined, undefined, undefined, undefined],
     		[undefined, undefined, undefined, undefined, star],
-	];
+			];
 		key_count = 0;
 		gem_count = 0;
 		heart_count = 0;
@@ -146,7 +144,6 @@ function reset(event){
 		gem_place.x = 4;
 		door_place.x = 4;
 		door_place.y = 1;
-    }
 }
 
 reset.addEventListener('click',reset);

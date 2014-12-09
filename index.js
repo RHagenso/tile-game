@@ -44,6 +44,8 @@ function key_pressed_down(event) {
 		key_place.x = 1;
 		heart_place.x = 0;
 		gem_place.x = 4;
+		door_place.x = 4;
+		door_place.y = 1;
     }
     
     if (event.keyCode === left_arrow_key) {
@@ -109,7 +111,7 @@ function key_pressed_down(event) {
     if ( protagonist.x === selector_place.x && protagonist.y === selector_place.y && heart_count>0){
     	document.getElementById("Win").innerHTML = "YOU WON!";
     	document.removeEventListener('keydown', key_pressed_down);
-    	terrain[protagonist.y][protagonist.x] = [grass, selector];
+    	terrain[protagonist.y][protagonist.x] = [grass, selector]; //Probably useless now
     }
     //Player defeating enemy/enemies
     if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && gem_count>0){

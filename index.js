@@ -114,22 +114,27 @@ function key_pressed_down(event) {
 
 function select_character_cat_girl() {
 	protagonist.element = cat_girl;
+	occupants[protagonist.y][protagonist.x] = protagonist.element;
 	render();
 }
 function select_character_boy() {
 	protagonist.element = boy;
+	occupants[protagonist.y][protagonist.x] = protagonist.element;
 	render();
 }
 function select_character_princess_girl() {
 	protagonist.element = princess_girl;
+	occupants[protagonist.y][protagonist.x] = protagonist.element;
 	render();
 }
 function select_character_horn_girl() {
 	protagonist.element = horn_girl;
+	occupants[protagonist.y][protagonist.x] = protagonist.element;
 	render();
 }
 function select_character_pink_girl() {
 	protagonist.element = pink_girl;
+	occupants[protagonist.y][protagonist.x] = protagonist.element;
 	render();
 }
 

@@ -13,6 +13,9 @@ var block_z_height = 39;
 
 var cat_girl = document.getElementById('cat-girl');
 var boy = document.getElementById('boy')
+var horn_girl = document.getElementById('horn-girl')
+var princess_girl = document.getElementById('princess-girl')
+var pink_girl = document.getElementById('pink-girl')
 
 // Objects
 

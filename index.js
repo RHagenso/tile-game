@@ -113,9 +113,26 @@ function key_pressed_down(event) {
 }
 
 function select_character_cat_girl() {
-	protagonist.element = cat-girl;
+	protagonist.element = cat_girl;
 	render();
 }
+function select_character_boy() {
+	protagonist.element = boy;
+	render();
+}
+function select_character_princess_girl() {
+	protagonist.element = princess_girl;
+	render();
+}
+function select_character_horn_girl() {
+	protagonist.element = horn_girl;
+	render();
+}
+function select_character_pink_girl() {
+	protagonist.element = pink_girl;
+	render();
+}
+
 function reset(){
 	   	protagonist.x = 2;
 		protagonist.y = 2;
@@ -149,13 +166,7 @@ function reset(){
 document.getElementById("reset_button").addEventListener('click',reset);
 document.addEventListener('keydown', key_pressed_down);
 document.getElementById("chr_cat_girl").addEventListener('click', select_character_cat_girl);
-document.getElementById("chr_boy").addEventListener('click', select_character(boy));
-chr_horn_girl.addEventListener('click',function(){
-	select_character(horn-girl);
-});
-chr_princess_girl.addEventListener('click',function() {
-	select_character(princess-girl);
-});
-chr_pink_girl.addEventListener('click',function() {
-	select_character(pink-girl);
-});
+document.getElementById("chr_boy").addEventListener('click', select_character_boy);
+document.getElementById("chr_horn_girl").addEventListener('click', select_character_horn_girl);
+document.getElementById("chr_princess_girl").addEventListener('click', select_character_princess_girl);
+document.getElementById("chr_pink_girl").addEventListener('click', select_character_pink_girl);

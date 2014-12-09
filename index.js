@@ -105,9 +105,9 @@ function key_pressed_down(event) {
        	door_place.y = -1;
     }
     if (occupants[protagonist.y][protagonist.x] === open_door){
-    	occupants[protagonist.y][protagonist.x] = protagonist.element, open_door;
+    	occupants[protagonist.y][protagonist.x] = [protagonist.element, open_door];
     } else if(occupants[protagonist.y][protagonist.x] === selector){
-    	occupants[protagonist.y][protagonist.x] = protagonist.element, selector;
+    	terrain[protagonist.y][protagonist.x] = [grass,selector];
     } else{
     	occupants[protagonist.y][protagonist.x] = protagonist.element;
     }
@@ -122,9 +122,7 @@ function select_character(selection) {
 
 document.addEventListener('keydown', key_pressed_down);
 chr_cat_girl.addEventListener('click', select_character(cat-girl));
-chr_boy.addEventListener('click',function() {
-	select_character(boy);
-});
+chr_boy.addEventListener('click', select_character(boy));
 chr_horn_girl.addEventListener('click',function(){
 	select_character(horn-girl);
 });

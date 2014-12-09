@@ -13,9 +13,28 @@ var left_arrow_key = 37;
 var up_arrow_key = 38;
 var right_arrow_key = 39;
 var down_arrow_key = 40;
+var letter_R = 82;
 
 function key_pressed_down(event) {
     occupants[protagonist.y][protagonist.x] = undefined;
+    
+    if (event.keyCode === 82){
+    	terrain = [
+    [[grass], [grass], [grass], [grass], [grass]],
+    [[grass], [grass], [grass, wood], [grass], [grass, closed_door]],
+    [[grass], [grass, plain], [grass], [grass], [grass]],
+    [[grass], [grass], [grass], [grass], [grass]],
+    [[grass, selector], [grass], [grass], [grass], [grass]],
+];
+		occupants = [
+    [heart, enemy, undefined, wall, gem],
+    [enemy, key, undefined, undefined, undefined],
+    [undefined, undefined, boy, undefined, undefined],
+    [undefined, undefined, undefined, undefined, undefined],
+    [undefined, undefined, undefined, undefined, star],
+];
+    }
+    
     if (event.keyCode === left_arrow_key) {
         if (is_in_bounds(protagonist.x - 1, protagonist.y)) {
             protagonist.x = protagonist.x - 1;
@@ -115,6 +134,7 @@ function select_character(selection) {
 	render();
 }
 
+document.adEventListener
 document.addEventListener('keydown', key_pressed_down);
 chr_cat_girl.addEventListener('click', select_character(cat-girl));
 chr_boy.addEventListener('click', select_character(boy));

@@ -146,7 +146,7 @@ function reset(){
 		door_place.y = 1;
 }
 
-document.getElementByID("reset_button").addEventListener('click',reset);
+document.getElementById("reset_button").addEventListener('click',reset);
 document.addEventListener('keydown', key_pressed_down);
 chr_cat_girl.addEventListener('click', select_character(cat-girl));
 chr_boy.addEventListener('click', select_character(boy));

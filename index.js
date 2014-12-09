@@ -70,11 +70,11 @@ function key_pressed_down(event) {
     	gem_place.x = undefined;
     }
     //Game over conditions
-    if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && star_count===0){
+    if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && heart_count===0){
     	document.getElementById("GameOver").innerHTML = "GAME OVER";
     	document.removeEventListener('keydown', key_pressed_down);
     }
-    if ( protagonist.x === enemy_2_place.x && protagonist.y === enemy_2_place.y && star_count===0){
+    if ( protagonist.x === enemy_2_place.x && protagonist.y === enemy_2_place.y && heart_count===0){
     	document.getElementById("GameOver").innerHTML = "GAME OVER";
     	document.removeEventListener('keydown', key_pressed_down);
     }

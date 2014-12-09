@@ -100,7 +100,7 @@ function key_pressed_down(event) {
     if (protagonist.x === door_place.x && protagonist.y === door_place.y && key_count>0) {
        	key_count -= 1;
        	document.getElementById("keys").innerHTML = key_count+" keys";
-       	occupants[door_place.y][door_place.x] = open_door;
+       	door_place.element = open_door;
     	door_place.y = -1;
     	door_place.x = -1;
     }
@@ -115,9 +115,7 @@ function select_character(selection) {
 }
 
 document.addEventListener('keydown', key_pressed_down);
-chr_cat_girl.addEventListener('click',function() {
-	select_character(cat-girl);
-});
+chr_cat_girl.addEventListener('click', select_character(cat-girl));
 chr_boy.addEventListener('click',function() {
 	select_character(boy);
 });

@@ -7,17 +7,17 @@ var row_count = 5;
 var column_count = 5;
 var terrain = [
     [[grass], [grass], [grass], [grass], [grass]],
-    [[grass], [grass], [grass, wood], [grass], [grass]],
+    [[grass], [grass], [grass, wood], [grass], [grass, closed_door]],
     [[grass], [grass, plain], [grass], [grass], [grass]],
     [[grass], [grass], [grass], [grass], [grass]],
-    [[grass], [grass], [grass], [grass], [grass]],
+    [[grass, selector], [grass], [grass], [grass], [grass]],
 ];
 var occupants = [
     [heart, enemy, undefined, wall, gem],
-    [enemy, key, undefined, undefined, closed_door],
+    [enemy, key, undefined, undefined, undefined],
     [undefined, undefined, cat_girl, undefined, undefined],
     [undefined, undefined, undefined, undefined, undefined],
-    [selector, undefined, undefined, undefined, star],
+    [undefined, undefined, undefined, undefined, star],
 ];
 var protagonist = {
     element: cat_girl,

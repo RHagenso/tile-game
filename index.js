@@ -148,8 +148,8 @@ function reset(){
 
 document.getElementById("reset_button").addEventListener('click',reset);
 document.addEventListener('keydown', key_pressed_down);
-chr_cat_girl.addEventListener('click', select_character(cat-girl));
-chr_boy.addEventListener('click', select_character(boy));
+document.getElementById("chr_cat_girl").addEventListener('click', select_character(cat-girl));
+document.getElementById("chr_boy").addEventListener('click', select_character(boy));
 chr_horn_girl.addEventListener('click',function(){
 	select_character(horn-girl);
 });

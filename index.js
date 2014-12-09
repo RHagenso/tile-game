@@ -33,6 +33,8 @@ function key_pressed_down(event) {
     [undefined, undefined, undefined, undefined, undefined],
     [undefined, undefined, undefined, undefined, star],
 ];
+		protagonist.x = 2;
+		protagonist.y = 2;
     }
     
     if (event.keyCode === left_arrow_key) {

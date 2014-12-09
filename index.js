@@ -101,11 +101,13 @@ function key_pressed_down(event) {
        	key_count -= 1;
        	document.getElementById("keys").innerHTML = key_count+" keys";
        	door_place.element = open_door;
+       	door_place.x = -1;
+       	door_place.y = -1;
     }
-    if (door_place.x === protagonist.x && door_place.y === protagonist.y){
-    	occupants[protagonist.y][protagonist.x] = protagonist.element, open_door
-    } else if(selector_place.x === protagonist.x && selector_place.y === protagonist.y){
-    	occupants[protagonist.y][protagonist.x] = protagonist.element, selector
+    if (occupants[protagonist.y][protagonist.x] === open_door){
+    	occupants[protagonist.y][protagonist.x] = protagonist.element, open_door;
+    } else if(occupants[protagonist.y][protagonist.x] === selector){
+    	occupants[protagonist.y][protagonist.x] = protagonist.element, selector;
     } else{
     	occupants[protagonist.y][protagonist.x] = protagonist.element;
     }

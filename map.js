@@ -15,12 +15,12 @@ var terrain = [
 var occupants = [
     [heart, enemy, undefined, wall, gem],
     [enemy, key, undefined, undefined, undefined],
-    [undefined, undefined, cat_girl, undefined, undefined],
+    [undefined, undefined, boy, undefined, undefined],
     [undefined, undefined, undefined, undefined, undefined],
     [undefined, undefined, undefined, undefined, star],
 ];
 var protagonist = {
-    element: cat_girl,
+    element: boy,
     x: 2,
     y: 2,
 };

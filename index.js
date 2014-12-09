@@ -18,23 +18,26 @@ var letter_R = 82;
 function key_pressed_down(event) {
     occupants[protagonist.y][protagonist.x] = undefined;
     
-    if (event.keyCode === 82){
-    	terrain = [
-    [[grass], [grass], [grass], [grass], [grass]],
-    [[grass], [grass], [grass, wood], [grass], [grass, closed_door]],
-    [[grass], [grass, plain], [grass], [grass], [grass]],
-    [[grass], [grass], [grass], [grass], [grass]],
-    [[grass, selector], [grass], [grass], [grass], [grass]],
-];
-		occupants = [
-    [heart, enemy, undefined, wall, gem],
-    [enemy, key, undefined, undefined, undefined],
-    [undefined, undefined, boy, undefined, undefined],
-    [undefined, undefined, undefined, undefined, undefined],
-    [undefined, undefined, undefined, undefined, star],
-];
-		protagonist.x = 2;
+    if (event.keyCode === letter_R){
+    	protagonist.x = 2;
 		protagonist.y = 2;
+		terrain = [
+    		[[grass], [grass], [grass], [grass], [grass]],
+    		[[grass], [grass], [grass, wood], [grass], [grass, closed_door]],
+    		[[grass], [grass, plain], [grass], [grass], [grass]],
+    		[[grass], [grass], [grass], [grass], [grass]],
+    		[[grass, selector], [grass], [grass], [grass], [grass]],
+	];
+		occupants = [
+    		[heart, enemy, undefined, wall, gem],
+    		[enemy, key, undefined, undefined, undefined],
+    		[undefined, undefined, boy, undefined, undefined],
+    		[undefined, undefined, undefined, undefined, undefined],
+    		[undefined, undefined, undefined, undefined, star],
+	];
+		key_count = 0;
+		gem_count = 0;
+		heart_count = 0;
     }
     
     if (event.keyCode === left_arrow_key) {

@@ -112,8 +112,8 @@ function key_pressed_down(event) {
     
 }
 
-function select_character(selection) {
-	protagonist.element = selection;
+function select_character_cat_girl() {
+	protagonist.element = cat-girl;
 	render();
 }
 function reset(){
@@ -148,7 +148,7 @@ function reset(){
 
 document.getElementById("reset_button").addEventListener('click',reset);
 document.addEventListener('keydown', key_pressed_down);
-document.getElementById("chr_cat_girl").addEventListener('click', select_character(cat-girl));
+document.getElementById("chr_cat_girl").addEventListener('click', select_character_cat_girl);
 document.getElementById("chr_boy").addEventListener('click', select_character(boy));
 chr_horn_girl.addEventListener('click',function(){
 	select_character(horn-girl);

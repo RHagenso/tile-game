@@ -19,36 +19,6 @@ var letter_R = 82;
 function key_pressed_down(event) {
     occupants[protagonist.y][protagonist.x] = undefined;
     
-    if (event.keyCode === letter_R){
-    	protagonist.x = 2;
-		protagonist.y = 2;
-		terrain = [
-    		[[grass], [grass], [grass], [grass], [grass]],
-    		[[grass], [grass], [grass, wood], [grass], [grass, closed_door]],
-    		[[grass], [grass, plain], [grass], [grass], [grass]],
-    		[[grass], [grass], [grass], [grass], [grass]],
-    		[[grass, selector], [grass], [grass], [grass], [grass]],
-	];
-		occupants = [
-    		[heart, enemy, undefined, wall, gem],
-    		[enemy, key, undefined, undefined, undefined],
-    		[undefined, undefined, protagonist.element, undefined, undefined],
-    		[undefined, undefined, undefined, undefined, undefined],
-    		[undefined, undefined, undefined, undefined, star],
-	];
-		key_count = 0;
-		gem_count = 0;
-		heart_count = 0;
-		document.getElementById("keys").innerHTML = key_count+" keys";
-		document.getElementById("hearts").innerHTML = heart_count+" hearts";
-		document.getElementById("gems").innerHTML = gem_count+" gems";
-		key_place.x = 1;
-		heart_place.x = 0;
-		gem_place.x = 4;
-		door_place.x = 4;
-		door_place.y = 1;
-    }
-    
     if (event.keyCode === left_arrow_key) {
         if (is_in_bounds(protagonist.x - 1, protagonist.y)) {
             protagonist.x = protagonist.x - 1;
@@ -147,7 +117,39 @@ function select_character(selection) {
 	protagonist.element = selection;
 	render();
 }
+function reset(event){
+	if (event.keyCode === letter_R){
+    	protagonist.x = 2;
+		protagonist.y = 2;
+		terrain = [
+    		[[grass], [grass], [grass], [grass], [grass]],
+    		[[grass], [grass], [grass, wood], [grass], [grass, closed_door]],
+    		[[grass], [grass, plain], [grass], [grass], [grass]],
+    		[[grass], [grass], [grass], [grass], [grass]],
+    		[[grass, selector], [grass], [grass], [grass], [grass]],
+	];
+		occupants = [
+    		[heart, enemy, undefined, wall, gem],
+    		[enemy, key, undefined, undefined, undefined],
+    		[undefined, undefined, protagonist.element, undefined, undefined],
+    		[undefined, undefined, undefined, undefined, undefined],
+    		[undefined, undefined, undefined, undefined, star],
+	];
+		key_count = 0;
+		gem_count = 0;
+		heart_count = 0;
+		document.getElementById("keys").innerHTML = key_count+" keys";
+		document.getElementById("hearts").innerHTML = heart_count+" hearts";
+		document.getElementById("gems").innerHTML = gem_count+" gems";
+		key_place.x = 1;
+		heart_place.x = 0;
+		gem_place.x = 4;
+		door_place.x = 4;
+		door_place.y = 1;
+    }
+}
 
+reset.addEventListener('click',reset);
 document.addEventListener('keydown', key_pressed_down);
 chr_cat_girl.addEventListener('click', select_character(cat-girl));
 chr_boy.addEventListener('click', select_character(boy));

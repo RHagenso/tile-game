@@ -42,6 +42,7 @@ img.asset {
     font-size: 1000%;
     position: absolute;
     top: 50%;
+    left 40%;
     }
 .Win {
 	color: #FFFFFF;
@@ -49,6 +50,7 @@ img.asset {
     font-size: 1000%;
     position: absolute;
     top: 50%;
+    left: 40%;
 }
 .instructions{
 	color: #FFFFFF;
@@ -61,5 +63,5 @@ img.asset {
 	color: #FFFFFF;
 	position: absolute;
 	text-align:center;
-	top: 50%	
+	top: 0;
 }

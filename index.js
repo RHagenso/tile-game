@@ -187,7 +187,6 @@ function reset(){
 		document.addEventListener('keydown', key_pressed_down);
 }
 
-document.getElementById("reset_button").addEventListener('click',reset);
 document.addEventListener('keydown', key_pressed_down);
 document.getElementById("chr_cat_girl").addEventListener('click', select_character_cat_girl);
 document.getElementById("chr_boy").addEventListener('click', select_character_boy);

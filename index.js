@@ -19,6 +19,9 @@ var down_arrow_key = 40;
 function key_pressed_down(event) {
     occupants[protagonist.y][protagonist.x] = undefined;
     
+    if (event.keyCode === 82) {
+        reset()
+        }
     if (event.keyCode === left_arrow_key) {
         if (is_in_bounds(protagonist.x - 1, protagonist.y)) {
             protagonist.x = protagonist.x - 1;
@@ -73,15 +76,18 @@ function key_pressed_down(event) {
     if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && heart_count===0){
     	document.getElementById("GameOver").innerHTML = "GAME OVER";
     	document.removeEventListener('keydown', key_pressed_down);
+    	document.addEventListener('keydown', post_win_keydown);
     }
     if ( protagonist.x === enemy_2_place.x && protagonist.y === enemy_2_place.y && heart_count===0){
     	document.getElementById("GameOver").innerHTML = "GAME OVER";
     	document.removeEventListener('keydown', key_pressed_down);
+    	document.addEventListener('keydown', post_win_keydown);
     }
     //Game winning conditions
     if ( protagonist.x === selector_place.x && protagonist.y === selector_place.y && star_count>0){
     	document.getElementById("Win").innerHTML = "YOU WON!";
     	document.removeEventListener('keydown', key_pressed_down);
+    	document.addEventListener('keydown', post_win_keydown);
     	terrain[protagonist.y][protagonist.x] = [grass, selector]; //Probably useless now
     }
     //Player defeating enemy/enemies
@@ -111,6 +117,11 @@ function key_pressed_down(event) {
     occupants[protagonist.y][protagonist.x] = protagonist.element;
     render();
     
+}
+function post_win_keydown(event){
+	if (event.keyCode === 82) {
+        reset()
+        }
 }
 
 function select_character_cat_girl() {

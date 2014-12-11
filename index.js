@@ -169,6 +169,8 @@ function reset(){
 		door_place.x = 4;
 		door_place.y = 1;
 		star_place.x=0;
+		enemy_2_place.x = 1;
+		enemy_1_place.x = 0;
 		document.getElementById("GameOver").innerHTML ="";
 		document.getElementById("Win").innerHTML = "";
 		document.addEventListener('keydown', key_pressed_down);

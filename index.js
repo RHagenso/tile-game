@@ -138,7 +138,10 @@ function select_character_pink_girl() {
 	occupants[protagonist.y][protagonist.x] = protagonist.element;
 	render();
 }
-
+function possible_reset(){
+	if event.keyCode === 82;
+	reset();
+}
 function reset(){
 	   	protagonist.x = 2;
 		protagonist.y = 2;
@@ -175,7 +178,7 @@ function reset(){
 		document.getElementById("Win").innerHTML = "";
 		document.addEventListener('keydown', key_pressed_down);
 }
-
+document.addEventListener('keydown', possible_reset);
 document.getElementById("reset_button").addEventListener('click',reset);
 document.addEventListener('keydown', key_pressed_down);
 document.getElementById("chr_cat_girl").addEventListener('click', select_character_cat_girl);

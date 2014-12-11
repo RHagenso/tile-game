@@ -39,18 +39,16 @@ img.asset {
 .GameOver {
     color: #FF0000;
     text-align: center;
-    font-size: 400%;
+    font-size: 1000%;
     position: absolute;
-    top: 0;
-    left: 40%;
-}
+    top: 50%;
+    }
 .Win {
 	color: #FFFFFF;
     text-align: center;
-    font-size: 400%;
+    font-size: 1000%;
     position: absolute;
-    top: 0;
-    left: 40%;
+    top: 50%;
 }
 .instructions{
 	color: #FFFFFF;
@@ -58,4 +56,10 @@ img.asset {
 	left:0;
 	top:0;
 	padding:15px 15px;
+}
+.title {
+	color: #FFFFFF;
+	position: absolute;
+	text-align:center;
+	top: 50%	
 }

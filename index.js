@@ -85,10 +85,12 @@ function key_pressed_down(event) {
     }
     //Game winning conditions
     if ( protagonist.x === selector_place.x && protagonist.y === selector_place.y && star_count>0){
-    	document.getElementById("Win").innerHTML = "YOU WON!";
+    	if(star_count ===2){document.getElementById("Win").innerHTML = "YOU WON WITH TWO STARS!";}
+    	else{document.getElementById("Win").innerHTML = "YOU WON!";}
     	document.removeEventListener('keydown', key_pressed_down);
     	document.addEventListener('keydown', post_win_keydown);
     	terrain[protagonist.y][protagonist.x] = [grass, selector]; //Probably useless now
+    	
     }
     //Player defeating enemy/enemies
     if ( protagonist.x === enemy_1_place.x && protagonist.y === enemy_1_place.y && heart_count>0){

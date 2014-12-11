@@ -21,7 +21,7 @@ img.asset {
 .inventory{
   	color: #FFFFFF;
 	position:absolute;
-	left:0;
+	right:0;
 	top:0;
 	padding:15px 15px;
 }
@@ -55,7 +55,7 @@ img.asset {
 .instructions{
 	color: #FFFFFF;
 	position:absolute;
-	right:0;
+	left:0;
 	top:0;
 	padding:15px 15px;
 }

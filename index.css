@@ -9,8 +9,8 @@ html, body {
 cite {
     color: #fff;
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 0;
+    right: 0;
 }
 cite a {
     color: #ffa;
@@ -62,7 +62,7 @@ img.asset {
 .version{
 	position: absolute;
 	color: #FFFFFF;
-	top: 100px;
-	left: 0;
+	top: 10px;
+	left: 50%;
 	padding: 15px 15px;
 }
